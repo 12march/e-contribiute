@@ -2,23 +2,12 @@ const express = require('express');
 const exphds = require('express-handlebars');
 const path = require('path');
 const bodyParser =require('body-parser');
-const mongoose = require('mongoose');
+
+const {mongoose} = require('./db/mongoose');
 
 const app = express();
 
-require('dotenv').config();
-
 const port = process.env.PORT || 5000;
-
-
-// Map global promise - get rid of warning
-mongoose.Promise = global.Promise;
-// Connect to mongoose
-mongoose.connect(process.env.DB_URL, {
-    useNewUrlParser: true
-})
-.then(() => console.log('MongoDB Connected .....'));
-
 
 
 //----------------------
@@ -49,23 +38,15 @@ app.use(bodyParser.json());
 // STATIC FOLDER
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-    res.render('welcome');
-});
 
-app.get('/login', (req, res) => {
-    res.render('login');
-});
+//--------------------------
+//      Routes
+//--------------------------
+// Load Routes
+let users = require('./routes/users');
 
-app.get('/create-group', (req, res) => {
-    res.render('create-group');
-});
-
-app.get('/group', (req, res) => {
-    res.render('group', {
-        name: 'Josh group'
-    });
-});
+// Use Routes
+app.use('/', users);
 
 
 app.listen(port, (req, res) => {

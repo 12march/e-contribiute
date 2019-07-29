@@ -31,12 +31,18 @@
                     </div>
                     <!-- end page title -->
 
+                    {{#each errors}}
+                        <div class="alert alert-danger">ssss</div>
+                    {{else}}
+
+                    {{/each}}
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="container">
                                 <div class="card-box">
 
-                                    <form action="/group/store" method="POST" class="parsley-examples">
+                                    <form action="/store-group" method="POST" class="parsley-examples">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">

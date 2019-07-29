@@ -37,31 +37,13 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="avatar-lg rounded-circle bg-soft-primary">
-                                            <i class="fe-tag font-22 avatar-title text-primary"></i>
+                                            <i class="fe-users font-22 avatar-title text-primary"></i>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">3,947</span></h3>
-                                            <p class="text-primary mb-1 text-truncate">Total Tickets</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-                            </div> <!-- end widget-rounded-circle-->
-                        </div> <!-- end col-->
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="widget-rounded-circle bg-soft-warning rounded-0 card-box mb-0">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="avatar-lg rounded-circle bg-soft-warning">
-                                            <i class="fe-clock font-22 avatar-title text-warning"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">624</span></h3>
-                                            <p class="text-warning mb-1 text-truncate">Pending Tickets</p>
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">5,000</span></h3>
+                                            <p class="text-primary mb-1 text-truncate">Total Participants</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
@@ -73,13 +55,31 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="avatar-lg rounded-circle bg-soft-success">
-                                            <i class="fe-check-circle font-22 avatar-title text-success"></i>
+                                            <i class="fe-dollar-sign font-22 avatar-title text-success"></i>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
                                             <h3 class="text-dark mt-1"><span data-plugin="counterup">3195</span></h3>
-                                            <p class="text-success mb-1 text-truncate">Closed Tickets</p>
+                                            <p class="text-success mb-1 text-truncate">Amount</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end widget-rounded-circle-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="widget-rounded-circle bg-soft-warning rounded-0 card-box mb-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-warning">
+                                            <i class="fe-user-plus font-22 avatar-title text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-right">
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">624</span></h3>
+                                            <p class="text-warning mb-1 text-truncate">Pending Participants</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
@@ -108,10 +108,11 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
-                                <button type="button" class="btn btn-sm btn-dark waves-effect waves-light float-right">
-                                    <i class="mdi mdi-plus-circle"></i> Add Ticket
+                                <button type="button" class="btn btn-sm btn-dark waves-effect waves-light float-right" 
+                                data-toggle="modal" data-target="#con-close-modal">
+                                    <i class="mdi mdi-plus-circle"></i> Add Participants
                                 </button>
-                                <h4 class="header-title mb-4">Manage Tickets</h4>
+                                <h4 class="header-title mb-4">Manage Participants</h4>
 
                                 <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100"
                                     id="tickets-table">
@@ -131,6 +132,9 @@
                                     </thead>
 
                                     <tbody>
+
+                                        {{#each groups}}
+
                                         <tr>
                                             <td><b>#1256</b></td>
                                             <td>
@@ -182,111 +186,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-
-                                        <tr>
-                                            <td><b>#2542</b></td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="text-body">
-                                                    <img src="assets/images/users/user-3.jpg" alt="contact-img"
-                                                        title="contact-img" class="rounded-circle avatar-xs" />
-                                                    <span class="ml-2">Jose D. Delacruz</span>
-                                                </a>
-                                            </td>
-
-                                            <td>
-                                                New submission on your website
-                                            </td>
-
-                                            <td>
-                                                <span class="badge badge-light-warning">Medium</span>
-                                            </td>
-
-                                            <td>
-                                                <span class="badge badge-light">Closed</span>
-                                            </td>
-
-                                            <td>
-                                                2008/04/25
-                                            </td>
-
-                                            <td>
-                                                2008/04/25
-                                            </td>
-
-                                            <td>
-                                                <div class="btn-group dropdown">
-                                                    <a href="javascript: void(0);"
-                                                        class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm"
-                                                        data-toggle="dropdown" aria-expanded="false"><i
-                                                            class="mdi mdi-dots-horizontal"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Edit
-                                                            Ticket</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Close</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Remove</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-star mr-2 font-18 text-muted vertical-middle"></i>Mark
-                                                            as Unread</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><b>#320</b></td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="text-body">
-                                                    <img src="assets/images/users/user-5.jpg" alt="contact-img"
-                                                        title="contact-img" class="rounded-circle avatar-xs" />
-                                                    <span class="ml-2">Phyllis K. Maciel</span>
-                                                </a>
-                                            </td>
-
-                                            <td>
-                                                Verify your new email address!
-                                            </td>
-
-                                            <td>
-                                                <span class="badge badge-light-danger">High</span>
-                                            </td>
-
-                                            <td>
-                                                <span class="badge badge-success">Open</span>
-                                            </td>
-
-                                            <td>
-                                                2017/04/20
-                                            </td>
-
-                                            <td>
-                                                2017/04/25
-                                            </td>
-
-                                            <td>
-                                                <div class="btn-group dropdown">
-                                                    <a href="javascript: void(0);"
-                                                        class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm"
-                                                        data-toggle="dropdown" aria-expanded="false"><i
-                                                            class="mdi mdi-dots-horizontal"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Edit
-                                                            Ticket</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i>Close</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Remove</a>
-                                                        <a class="dropdown-item" href="#"><i
-                                                                class="mdi mdi-star mr-2 font-18 text-muted vertical-middle"></i>Mark
-                                                            as Unread</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        
+                                            
+                                        {{/each}}
                                     </tbody>
                                 </table>
                             </div>
@@ -297,6 +198,33 @@
                 </div> <!-- container -->
 
             </div> <!-- content -->
+
+            <!--======= ADD USERS MODAL =========-->
+                <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Participants</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="field-3" class="control-label">Email Address</label>
+                                            <input type="text" class="form-control" id="field-3" placeholder="Enter email address" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="buuton" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-info waves-effect waves-light">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal -->
+            <!--=======/ END MODAL ========-->
 
             <!-- Footer Start -->
             <footer class="footer">
