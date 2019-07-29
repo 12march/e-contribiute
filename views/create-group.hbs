@@ -1,0 +1,144 @@
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        {{> _navbar }}
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">e-contribute</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">create group</a></li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Create Group</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="container">
+                                <div class="card-box">
+
+                                    <form action="/group/store" method="POST" class="parsley-examples">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="Name">Group Name<span class="text-danger">*</span></label>
+                                                    <input type="text" name="name" parsley-trigger="change" required
+                                                        placeholder="Enter group name" class="form-control" id="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="amount">Amount<span class="text-danger">*</span></label>
+                                                    <input type="number" name="amount" data-parsley-minlength="2" data-parsley-minlength-message="Input should be more than 2 digit" parsley-trigger="change" required
+                                                        placeholder="Enter amount" class="form-control" id="amount">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="frequency">Frequency<span class="text-danger">*</span></label>
+                                                        <select name="frequency" class="form-control" id="frequency" parsley-trigger="change" required>
+                                                            <option></option>
+                                                            <option value="daily">Daily</option>
+                                                            <option value="weekly">Weekly</option>
+                                                            <option value="monthly">Monthly</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="bankName">Bank Name<span class="text-danger">*</span></label>
+                                                    <input type="text" name="bankName" parsley-trigger="change" required
+                                                        placeholder="Enter bank name" class="form-control" id="bankName">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="frequency">Account Number<span class="text-danger">*</span></label>
+                                                        <input type="number" name="accountNumber" data-parsley-minlength="5" data-parsley-minlength-message="Input should be more than 6 digit" parsley-trigger="change" required
+                                                        placeholder="Enter amount" class="form-control" id="amount">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-right m-b-0">
+                                            <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">
+                                                Submit
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div> <!-- end card-box -->
+                            </div><!-- end container -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            2019 &copy; Xeria theme by <a href="#">Coderthemes</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript:void(0);">About Us</a>
+                                <a href="javascript:void(0);">Help</a>
+                                <a href="javascript:void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    {{> _sidebar-rigth}}
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugin js-->
+    <script src="assets/libs/parsleyjs/parsley.min.js"></script>
+
+    <!-- Validation init js-->
+    <script src="assets/js/pages/form-validation.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
