@@ -27,12 +27,31 @@ const GroupSchema = new Schema({
         type: String,
     },
     groupAdmin: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    status: {
         type: String,
+        default: false
     },
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    participants: [{
+        email: {
+            type: String,
+            required: true
+        },
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: 'users'
+        },
+        data: {
+            type: Date,
+            default: Date.now
+        }
+    }]
 });
 
 mongoose.model('groups', GroupSchema);
